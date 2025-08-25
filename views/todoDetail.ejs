@@ -1,0 +1,36 @@
+<!-- views/todoDetail.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+<%- include('inc/Top.ejs') %>  
+<hr>
+    <h2>Todo Detail</h2>
+    <table>
+        <tr>
+            <th>ObjectId</th>
+            <td><%= todo._id %></td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td><%= todo.title %></td>
+        </tr>
+        <tr>
+            <th>Done</th>
+            <td><%= todo.done %></td>
+        </tr>
+    </table>
+    <p>
+        <a href="/todo/list">목록</a> | <a href="/todo/modify?_id=<%= todo._id %>">수정</a> | 
+        <a href="/todo/delete?_id=<%= todo._id %>">삭제</a>
+    </p>
+<hr>
+<%- include('inc/Bottom.ejs') %>
+</body>
+</html>
